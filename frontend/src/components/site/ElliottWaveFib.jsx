@@ -79,21 +79,32 @@ export default function ElliottWaveFib({ className = "" }) {
               animate={inView ? { pathLength: 1 } : {}}
               transition={{ duration: 1.6, delay: 3.0 + i * 0.12, ease: "easeInOut" }}
             />
-            {/* Fib level percentage label at end of line */}
-            <motion.text
-              x="1006" y={f.y + 3}
-              fill="#013aa9"
-              fillOpacity={f.pct === 0.618 ? 1 : 0.85}
-              fontSize="11"
-              fontFamily="IBM Plex Mono, monospace"
-              fontWeight={f.pct === 0.618 ? 700 : 500}
-              letterSpacing="1"
-              initial={{ opacity: 0, x: 1014 }}
-              animate={inView ? { opacity: 1, x: 1006 } : {}}
+            {/* Fib level percentage chip at end of line */}
+            <motion.g
+              initial={{ opacity: 0, x: 8 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 3.4 + i * 0.12 }}
             >
-              {f.label}
-            </motion.text>
+              <rect
+                x="1006" y={f.y - 8}
+                width="66" height="15"
+                fill="#f7f3e8"
+                stroke="#013aa9"
+                strokeWidth={f.pct === 0.618 ? 1 : 0.6}
+                strokeOpacity={f.pct === 0.618 ? 1 : 0.5}
+              />
+              <text
+                x="1039" y={f.y + 3}
+                textAnchor="middle"
+                fill="#013aa9"
+                fontSize="10"
+                fontFamily="IBM Plex Mono, monospace"
+                fontWeight={f.pct === 0.618 ? 700 : 500}
+                letterSpacing="1"
+              >
+                {f.label}
+              </text>
+            </motion.g>
           </g>
         ))}
 

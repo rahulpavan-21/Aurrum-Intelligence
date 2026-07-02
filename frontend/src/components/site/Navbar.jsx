@@ -50,7 +50,7 @@ export default function Navbar() {
           <div
             role="img"
             aria-hidden
-            className="h-full w-64 sm:w-80"
+            className="h-16 sm:h-20 w-64 sm:w-80 shrink-0"
             style={{
               backgroundImage: `url("${LOGO}")`,
               backgroundRepeat: "no-repeat",

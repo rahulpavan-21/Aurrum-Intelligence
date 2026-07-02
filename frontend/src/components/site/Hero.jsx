@@ -43,8 +43,8 @@ export default function Hero() {
     >
       <ParticleNetwork density={38} />
 
-      {/* Corner meta */}
-      <div className="absolute top-24 left-6 sm:left-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] flex flex-wrap gap-x-8 gap-y-3" data-testid="hero-meta-left">
+      {/* Corner meta — full-width bar with 3 desks + live clock spread across */}
+      <div className="absolute top-24 left-6 sm:left-10 right-6 sm:right-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] flex items-start justify-between gap-6" data-testid="hero-meta-left">
         <div>
           <div>N 40°42′25″ · W 74°00′41″</div>
           <div className="mt-1 opacity-80">DESK · NEW YORK</div>
@@ -57,12 +57,12 @@ export default function Hero() {
           <div>N 35°40′52″ · E 139°46′43″</div>
           <div className="mt-1 opacity-80">DESK · TOKYO</div>
         </div>
-      </div>
-      <div className="absolute top-24 right-6 sm:right-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] text-right" data-testid="hero-meta-right">
-        <div>{timeStr}</div>
-        <div className="mt-1 flex items-center gap-2 justify-end">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#013aa9] blink" />
-          MARKETS · LIVE
+        <div className="text-right" data-testid="hero-meta-right">
+          <div>{timeStr}</div>
+          <div className="mt-1 flex items-center gap-2 justify-end">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#013aa9] blink" />
+            MARKETS · LIVE
+          </div>
         </div>
       </div>
 
@@ -155,15 +155,15 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Floating logo watermark bottom right */}
+      {/* Floating logo watermark — pushed further off-screen so it never interferes with the Fib labels on the right */}
       <motion.img
         initial={{ opacity: 0, rotate: -5 }}
-        animate={{ opacity: 0.06, rotate: 0 }}
+        animate={{ opacity: 0.04, rotate: 0 }}
         transition={{ delay: 0.4, duration: 1.6 }}
         src={LOGO}
         alt=""
         aria-hidden
-        className="absolute -bottom-24 -right-24 w-[640px] max-w-[80vw] pointer-events-none select-none"
+        className="absolute -bottom-64 -right-64 w-[520px] max-w-[70vw] pointer-events-none select-none"
       />
     </section>
   );
