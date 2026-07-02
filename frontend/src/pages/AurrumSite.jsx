@@ -1,0 +1,32 @@
+import React from "react";
+import Navbar from "../components/site/Navbar";
+import Hero from "../components/site/Hero";
+import MarketTicker from "../components/site/MarketTicker";
+import About from "../components/site/About";
+import Services from "../components/site/Services";
+import HowItWorks from "../components/site/HowItWorks";
+import SampleBriefing from "../components/site/SampleBriefing";
+import Pricing from "../components/site/Pricing";
+import Team from "../components/site/Team";
+import Contact from "../components/site/Contact";
+import Footer from "../components/site/Footer";
+
+export default function AurrumSite() {
+  return (
+    <div data-testid="aurrum-landing" className="relative">
+      <Navbar />
+      <main>
+        <Hero />
+        <MarketTicker />
+        <About />
+        <Services />
+        <HowItWorks />
+        <SampleBriefing />
+        <Pricing />
+        <Team />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
