@@ -56,7 +56,7 @@ export default function ElliottWaveFib({ className = "" }) {
           ELLIOTT · IMPULSE + CORRECTION
         </motion.text>
         <motion.text
-          x="1050" y="14" textAnchor="end"
+          x="1000" y="10" textAnchor="end"
           fill="#013aa9" fillOpacity={0.55}
           fontSize="8" fontFamily="IBM Plex Mono, monospace" letterSpacing="2"
           initial={{ opacity: 0 }}
