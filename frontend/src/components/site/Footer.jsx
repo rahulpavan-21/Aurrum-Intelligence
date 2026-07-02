@@ -1,6 +1,6 @@
 import React from "react";
 
-const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/u7r7no9f_Final%20%282%29.png";
+const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/d3aqalox_Final%20%283%29.png";
 const SUPPORT_EMAIL = "support@aurrumintelligence.com";
 
 export default function Footer() {
@@ -8,7 +8,18 @@ export default function Footer() {
     <footer data-testid="site-footer" className="relative bg-[#f7f3e8] border-t border-dashed border-[#013aa9]/40">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 py-16 grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-7">
-          <img src={LOGO} alt="Aurrum Intelligence" className="w-52 mb-6" data-testid="footer-logo" />
+          <div
+            role="img"
+            aria-label="Aurrum Intelligence"
+            data-testid="footer-logo"
+            className="w-64 h-64 bg-black mb-6"
+            style={{
+              backgroundImage: `url("${LOGO}")`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center 45%",
+              backgroundSize: "160% auto",
+            }}
+          />
           <p className="font-sans-ui text-sm text-[#013aa9]/75 max-w-md">
             Aurrum Intelligence &middot; Market intelligence platform for the independent trader.
             Institutional research, delivered pre-market, priced for retail.

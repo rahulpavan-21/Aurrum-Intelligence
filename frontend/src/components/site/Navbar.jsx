@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MagneticButton from "./MagneticButton";
 
-const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/u7r7no9f_Final%20%282%29.png";
+const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/yft9b2jx_Final%20%284%29.png";
 
 const links = [
   { label: "Intelligence", href: "#about" },
@@ -49,12 +49,12 @@ export default function Navbar() {
           <div
             role="img"
             aria-hidden
-            className="h-16 sm:h-20 w-64 sm:w-80 shrink-0"
+            className="h-16 sm:h-20 w-52 sm:w-64 shrink-0 bg-black"
             style={{
               backgroundImage: `url("${LOGO}")`,
               backgroundRepeat: "no-repeat",
-              backgroundSize: "auto 320%",
-              backgroundPosition: "0% 48%",
+              backgroundPosition: "center center",
+              backgroundSize: "auto 200%",
             }}
           />
         </a>
