@@ -1,0 +1,163 @@
+{
+  "theme": "light",
+  "archetype": "5 (Luxury Editorial Fintech)",
+  "design_philosophy": "A one-page interactive market intelligence platform that blends a Bloomberg terminal's precision with a luxury editorial magazine's elegance. Uses smooth parallax, scroll-triggered typographic reveals, and a signature dashed-line motif echoing the Aurrum Intelligence logo.",
+  "colors": {
+    "background": {
+      "primary": "#f7f3e8",
+      "secondary": "#ffffff",
+      "inverted": "#013aa9"
+    },
+    "text": {
+      "primary": "#013aa9",
+      "secondary": "#013aa9",
+      "muted": "rgba(1, 58, 169, 0.6)",
+      "inverted": "#f7f3e8"
+    },
+    "accents": {
+      "primary": "#013aa9",
+      "chart_green": "#22c55e",
+      "chart_red": "#ef4444"
+    },
+    "borders": {
+      "light": "rgba(1, 58, 169, 0.15)",
+      "strong": "rgba(1, 58, 169, 0.5)",
+      "inverted": "rgba(247, 243, 232, 0.2)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Playfair Display, Bodoni Moda, serif",
+      "sans": "Inter, Manrope, sans-serif",
+      "mono": "IBM Plex Mono, JetBrains Mono, monospace"
+    },
+    "scales": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-none",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-none",
+      "h3": "text-2xl sm:text-3xl font-semibold tracking-tight",
+      "h4": "text-lg sm:text-xl font-medium uppercase tracking-[0.2em]",
+      "body": "text-base sm:text-lg leading-relaxed font-sans",
+      "mono_data": "text-xs sm:text-sm font-mono uppercase tracking-widest"
+    },
+    "rules": {
+      "pairing": "Use serif for prominent narrative headlines. Use condensed geometric sans for UI elements and subtitles. Use monospace for market tickers and data points."
+    }
+  },
+  "spacing_and_layout": {
+    "grid_system": "Bento grids with asymmetry for services. Sticky-scroll 50/50 layouts for 'How it Works'.",
+    "section_padding": "py-24 sm:py-32",
+    "container": "max-w-7xl mx-auto px-6 sm:px-8 lg:px-12",
+    "borders": "1px solid borders using the signature dashed line motif for section dividers and card borders."
+  },
+  "motion_and_interaction": {
+    "scroll": "Smooth scrolling using Lenis required.",
+    "parallax": "Subtle parallax on images and background noise/particles.",
+    "reveal": "Scroll-triggered letter-by-letter or masked word reveals for H1 and H2 using Framer Motion.",
+    "cursor": "Custom cursor following orb that inverses color or expands on hover over links.",
+    "magnetic": "Magnetic effect on primary CTA buttons (using Framer Motion spring).",
+    "background": "Subtle canvas particle/network background in ivory/blue tones that reacts slightly to mouse."
+  },
+  "components": {
+    "navbar": {
+      "style": "Glassmorphism backdrop-blur-xl bg-[#f7f3e8]/80 or solid ivory background. Sticky to top with mix-blend mode if traversing dark sections.",
+      "logo": "Use provided URL. Display prominently."
+    },
+    "buttons": {
+      "primary": "Solid deep royal blue (#013aa9) background, ivory text, rounded-none or very slight radius. Magnetic hover.",
+      "secondary": "Outline button with dashed royal blue border, solid on hover."
+    },
+    "cards": {
+      "style": "Flat, 1px dashed or solid border (rgba(1, 58, 169, 0.2)), no drop shadows. Editorial precision."
+    },
+    "market_ticker": {
+      "style": "Endless marquee (react-fast-marquee) using monospace font. Deep blue background with ivory text, or vice-versa."
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero Section",
+      "description": "Animated intro revealing logo and tagline 'Read the market. Trade the edge.' Features magnetic CTA, floating market ticker element, and subtle network background."
+    },
+    {
+      "id": "about",
+      "name": "About/Mission",
+      "description": "Editorial layout with high-contrast typography. Scroll-reveal text explaining the institutional-level edge Aurrum provides."
+    },
+    {
+      "id": "services",
+      "name": "Services/Capabilities",
+      "description": "Bento grid layout. Daily Briefing, Macro Intelligence, Sector Deep-Dives, Trade Ideas, Risk Radar. Hover states use dashed-line animations."
+    },
+    {
+      "id": "how-it-works",
+      "name": "How it Works",
+      "description": "3-4 step process using sticky-scroll animation. Content on one side stays sticky while the other scrolls."
+    },
+    {
+      "id": "sample-briefing",
+      "name": "Sample Briefing",
+      "description": "Mock briefing card with animated chart lines mimicking the logo's dashed motif. Live-market feel."
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing",
+      "description": "Minimal. One bold accessible price. High contrast."
+    },
+    {
+      "id": "team",
+      "name": "Team",
+      "description": "Professional portraits with subtle monochrome or high-contrast filter on hover."
+    },
+    {
+      "id": "contact",
+      "name": "Contact Form",
+      "description": "Deep blue inverted section. Form with name, email, message, trading style. Animated submit. Form state should be saved to DB only."
+    }
+  ],
+  "media": {
+    "logos": [
+      {
+        "url": "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/u7r7no9f_Final%20%282%29.png",
+        "description": "Aurrum Intelligence official logo. Must be used in Navbar and Hero.",
+        "category": "brand_logo"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://images.pexels.com/photos/6203470/pexels-photo-6203470.jpeg",
+        "description": "Abstract financial line chart.",
+        "category": "abstract_background"
+      },
+      {
+        "url": "https://images.pexels.com/photos/27288569/pexels-photo-27288569.jpeg",
+        "description": "Stock market data chart showing trends.",
+        "category": "abstract_background"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHBvcnRyYWl0fGVufDB8fHx8MTc4MzAwNDg4NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Professional business portrait of a man.",
+        "category": "team_member"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHBvcnRyYWl0fGVufDB8fHx8MTc4MzAwNDg4NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Professional business portrait of a woman.",
+        "category": "team_member"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1614786269829-d24616faf56d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHBvcnRyYWl0fGVufDB8fHx8MTc4MzAwNDg4NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Professional business portrait of a woman in black.",
+        "category": "team_member"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the color palette: Ivory (#f7f3e8) and Deep Royal Blue (#013aa9). Do not invert to dark mode. Only the contact section or specific blocks should be deep blue to act as contrast breaks.",
+    "Use Framer Motion for scroll reveals, magnetic buttons, and the cursor orb.",
+    "Implement Lenis for smooth scrolling. This is critical for the luxury feel.",
+    "Implement react-fast-marquee for the market tickers.",
+    "Ensure the dashed line chart motif (from the logo) is prevalent in dividers, background elements, and hover effects. Use SVG strokes with strokeDasharray and Framer Motion to animate these.",
+    "Make the background slightly noisy or use a subtle ivory particle network.",
+    "All interactive elements MUST include a data-testid attribute in kebab-case."
+  ]
+}
