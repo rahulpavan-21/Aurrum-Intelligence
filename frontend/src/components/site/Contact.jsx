@@ -81,7 +81,7 @@ export default function Contact() {
                 </div>
                 <a
                   href={`mailto:${SUPPORT_EMAIL}`}
-                  className="font-display text-2xl sm:text-3xl underline underline-offset-4 break-all"
+                  className="font-display text-lg sm:text-xl lg:text-2xl underline underline-offset-4 whitespace-nowrap"
                   data-testid="contact-email-link"
                 >
                   {SUPPORT_EMAIL}
@@ -93,7 +93,7 @@ export default function Contact() {
                   Hours
                 </div>
                 <div className="font-sans-ui text-base">
-                  Mon &ndash; Fri &middot; 05:30 &ndash; 17:00 ET
+                  Mon &ndash; Fri
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
               Read this before you trade a single tick.
             </motion.h3>
 
-            <dl className="space-y-6">
+            <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
               {disclosures.map((d, i) => (
                 <motion.div
                   key={i}
@@ -134,18 +134,16 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.05 }}
                   transition={{ duration: 0.7, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                  className="grid sm:grid-cols-12 gap-2 sm:gap-6 pb-5 border-b border-dashed border-[#f7f3e8]/20"
+                  className="pb-5 border-b border-dashed border-[#f7f3e8]/20"
                   data-testid={`risk-item-${i}`}
                 >
-                  <dt className="sm:col-span-4">
-                    <div className="font-mono-ui text-[10px] uppercase tracking-[0.28em] text-[#f7f3e8]/70">
-                      0{i + 1}
-                    </div>
-                    <div className="font-display text-lg text-[#f7f3e8] mt-1">
-                      {d.k}
-                    </div>
+                  <div className="font-mono-ui text-[10px] uppercase tracking-[0.28em] text-[#f7f3e8]/70">
+                    0{i + 1}
+                  </div>
+                  <dt className="font-display text-base sm:text-lg text-[#f7f3e8] mt-1 mb-2">
+                    {d.k}
                   </dt>
-                  <dd className="sm:col-span-8 font-sans-ui text-sm sm:text-[15px] leading-relaxed text-[#f7f3e8]/85">
+                  <dd className="font-sans-ui text-xs sm:text-sm leading-relaxed text-[#f7f3e8]/80">
                     {d.v}
                   </dd>
                 </motion.div>
