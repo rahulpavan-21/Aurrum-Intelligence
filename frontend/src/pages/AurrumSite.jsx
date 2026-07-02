@@ -3,7 +3,6 @@ import Navbar from "../components/site/Navbar";
 import Hero from "../components/site/Hero";
 import MarketTicker from "../components/site/MarketTicker";
 import About from "../components/site/About";
-import Services from "../components/site/Services";
 import HowItWorks from "../components/site/HowItWorks";
 import SampleBriefing from "../components/site/SampleBriefing";
 import Pricing from "../components/site/Pricing";
@@ -19,7 +18,6 @@ export default function AurrumSite() {
         <Hero />
         <MarketTicker />
         <About />
-        <Services />
         <HowItWorks />
         <SampleBriefing />
         <Pricing />

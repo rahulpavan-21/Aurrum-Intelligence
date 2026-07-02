@@ -36,7 +36,6 @@ export default function Footer() {
           <ul className="space-y-2 font-sans-ui text-sm text-[#013aa9]/85">
             {[
               { l: "Intelligence", h: "#about" },
-              { l: "Capabilities", h: "#services" },
               { l: "Process", h: "#how" },
               { l: "Sample Briefing", h: "#sample" },
               { l: "Pricing", h: "#pricing" },

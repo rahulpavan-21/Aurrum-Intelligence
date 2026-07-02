@@ -5,7 +5,6 @@ const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/ar
 
 const links = [
   { label: "Intelligence", href: "#about" },
-  { label: "Capabilities", href: "#services" },
   { label: "Process", href: "#how" },
   { label: "Briefing", href: "#sample" },
   { label: "Pricing", href: "#pricing" },
