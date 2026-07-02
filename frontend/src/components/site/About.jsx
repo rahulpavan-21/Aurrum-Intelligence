@@ -3,10 +3,26 @@ import { motion } from "framer-motion";
 import { RevealBlock } from "./AnimatedText";
 
 const quotes = [
-  "Information asymmetry is the last durable edge. We close it — every morning, before the bell.",
-  "Escape the analysis paralysis and cut those fake-guru noise.",
-  "Retail drowns in information. Institutions act on interpretation. We hand you the interpretation.",
-  "No signals. No spoon-feeding. Bloomberg/Reuters-level technical analysis that builds a real trader.",
+  (
+    <>
+      <strong>Information asymmetry</strong> is the last durable edge. We close it &mdash; every morning, before the bell.
+    </>
+  ),
+  (
+    <>
+      Escape the <strong>analysis paralysis</strong> and cut those fake-guru noise.
+    </>
+  ),
+  (
+    <>
+      Retail drowns in information. Institutions act on interpretation. We hand you the <strong>interpretation</strong>.
+    </>
+  ),
+  (
+    <>
+      No signals. No spoon-feeding. <strong>Bloomberg/Reuters</strong>-level technical analysis that builds a real trader.
+    </>
+  ),
 ];
 
 export default function About() {
