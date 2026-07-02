@@ -12,7 +12,7 @@ export default function Footer() {
             src={LOGO}
             alt="Aurrum Intelligence"
             data-testid="footer-logo"
-            className="w-32 h-32 sm:w-36 sm:h-36 object-cover object-center block mb-6"
+            className="h-12 sm:h-14 w-auto object-contain mb-6"
             loading="lazy"
           />
           <p className="font-sans-ui text-sm text-[#013aa9]/75 max-w-md">
