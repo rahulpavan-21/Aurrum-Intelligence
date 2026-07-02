@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MagneticButton from "./MagneticButton";
 
-const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/yft9b2jx_Final%20%284%29.png";
+const LOGO = "/logo.png";
 
 const links = [
   { label: "Intelligence", href: "#about" },
