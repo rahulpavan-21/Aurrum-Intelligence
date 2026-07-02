@@ -91,22 +91,51 @@ export default function Hero() {
           </div>
 
           <div className="lg:col-span-4 lg:pl-8 lg:border-l lg:border-dashed lg:border-[#013aa9]/40">
-            <motion.p
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 1 }}
-              className="font-sans-ui text-base sm:text-lg leading-relaxed text-[#013aa9]/85"
+              className="font-display text-2xl sm:text-3xl leading-[1.1] tracking-[-0.01em] text-[#013aa9]"
               data-testid="hero-subhead"
             >
-              Aurrum delivers institutional-grade daily market briefings —
-              macro reads, sector deep-dives, and asymmetric trade ideas —
-              curated by senior desks and priced for the independent trader.
-            </motion.p>
+              Aurrum Intelligence makes your life better if you are{" "}
+              <span className="italic font-medium">a…</span>
+            </motion.h2>
+
+            <motion.ul
+              initial="hidden"
+              animate="show"
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.12, delayChildren: 1.05 } },
+              }}
+              className="mt-6 space-y-3"
+              data-testid="hero-audience-list"
+            >
+              {[
+                "serious trader who wants an institutional edge.",
+                "prop-firm trader who wants real payouts.",
+                "beginner who wants to start how a professional starts.",
+              ].map((t, i) => (
+                <motion.li
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0, y: 14 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+                  }}
+                  className="flex items-start gap-3 font-sans-ui text-sm sm:text-base leading-snug text-[#013aa9]/90"
+                  data-testid={`hero-audience-${i}`}
+                >
+                  <span className="mt-2 w-4 h-px bg-[#013aa9] shrink-0" />
+                  <span>{t}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 1 }}
+              transition={{ delay: 1.5, duration: 1 }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <MagneticButton
