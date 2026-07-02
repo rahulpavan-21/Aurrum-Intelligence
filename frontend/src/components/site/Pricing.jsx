@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
+import DashedChart from "./DashedChart";
 
 const plans = [
   {
@@ -17,6 +18,11 @@ const plans = [
       "Setup guide from our expert team.",
       "Modules on how to apply and build your own setup.",
     ],
+    meta: [
+      { k: "Frequency", v: "Daily" },
+      { k: "Delivery", v: "05:30 ET" },
+      { k: "Cancel", v: "Any time" },
+    ],
     ctaLabel: "Start Your Subscription",
   },
   {
@@ -31,6 +37,11 @@ const plans = [
       "Path to your first Funded account and payout.",
       "Applicable to any CFDs and Futures firm.",
       "Mentorship from traders with 100k+ payouts.",
+    ],
+    meta: [
+      { k: "Format", v: "1-to-1 + Cohort" },
+      { k: "Access", v: "Lifetime" },
+      { k: "Cohort", v: "Rolling" },
     ],
     ctaLabel: "Join the Mentorship",
   },
@@ -81,7 +92,7 @@ function PricingCard({ plan, index }) {
       }
     >
       {/* Left half — number */}
-      <div className={"lg:col-span-5 p-10 sm:p-12 relative overflow-hidden " + (dark ? "bg-[#f7f3e8]" : "bg-[#f7f3e8]")}>
+      <div className={"lg:col-span-5 p-10 sm:p-12 relative overflow-hidden flex flex-col " + (dark ? "bg-[#f7f3e8]" : "bg-[#f7f3e8]")}>
         <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#013aa9]/70 mb-6" data-testid={`${plan.id}-tag`}>
           {plan.tag}
         </div>
@@ -96,6 +107,25 @@ function PricingCard({ plan, index }) {
         </div>
         <div className="mt-4 font-sans-ui text-[#013aa9]/80 text-sm sm:text-base leading-relaxed" data-testid={`${plan.id}-sub`}>
           {plan.sub}
+        </div>
+
+        {/* Filler: signature dashed chart + meta chip pushed to bottom */}
+        <div className="mt-8 flex-1 flex flex-col justify-end gap-6">
+          <div className="relative">
+            <DashedChart className="w-full h-20 sm:h-24 opacity-70" />
+          </div>
+          <div className="grid grid-cols-3 gap-3 pt-6 border-t border-dashed border-[#013aa9]/40">
+            {plan.meta.map((m, i) => (
+              <div key={i}>
+                <div className="font-mono-ui text-[9px] uppercase tracking-[0.24em] text-[#013aa9]/60">
+                  {m.k}
+                </div>
+                <div className="mt-1 font-display text-base sm:text-lg text-[#013aa9] leading-tight">
+                  {m.v}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
