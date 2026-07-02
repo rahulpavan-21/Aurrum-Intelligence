@@ -43,6 +43,45 @@ export default function Hero() {
     >
       <ParticleNetwork density={38} />
 
+      {/* Vertical 3D wordmark — sits in the void on the left, rotated -90deg */}
+      <motion.div
+        aria-hidden
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.2, duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        style={{ y: y1 }}
+        data-testid="hero-vertical-wordmark"
+        className="hidden md:block absolute top-1/2 left-0 sm:left-2 z-[1] pointer-events-none select-none"
+      >
+        <div
+          className="font-display leading-none tracking-[0.02em] text-[#013aa9]/85"
+          style={{
+            transform: "translateY(-50%) rotate(-90deg)",
+            transformOrigin: "left center",
+            whiteSpace: "nowrap",
+            fontSize: "clamp(28px, 3.6vw, 60px)",
+            fontWeight: 800,
+            fontStyle: "italic",
+            letterSpacing: "0.04em",
+            marginLeft: "clamp(28px, 3.6vw, 60px)",
+            // 3D extruded stack (bottom → top-most)
+            textShadow: [
+              "1px 1px 0 rgba(1,58,169,0.85)",
+              "2px 2px 0 rgba(1,58,169,0.7)",
+              "3px 3px 0 rgba(1,58,169,0.55)",
+              "4px 4px 0 rgba(1,58,169,0.42)",
+              "5px 5px 0 rgba(1,58,169,0.32)",
+              "6px 6px 0 rgba(1,58,169,0.24)",
+              "8px 8px 0 rgba(1,58,169,0.18)",
+              "12px 12px 32px rgba(1,58,169,0.18)",
+            ].join(","),
+            WebkitTextStroke: "0.5px rgba(1,58,169,0.55)",
+          }}
+        >
+          AURRUM&nbsp;&middot;&nbsp;INTELLIGENCE
+        </div>
+      </motion.div>
+
       {/* Corner meta — full-width bar with 3 desks + live clock spread across */}
       <div className="absolute top-24 left-6 sm:left-10 right-6 sm:right-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] flex items-start justify-between gap-6" data-testid="hero-meta-left">
         <div>
