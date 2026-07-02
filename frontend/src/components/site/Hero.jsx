@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import MagneticButton from "./MagneticButton";
 import ParticleNetwork from "./ParticleNetwork";
-import DashedChart from "./DashedChart";
+import ElliottWaveFib from "./ElliottWaveFib";
 
 const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/u7r7no9f_Final%20%282%29.png";
 
@@ -44,9 +44,19 @@ export default function Hero() {
       <ParticleNetwork density={38} />
 
       {/* Corner meta */}
-      <div className="absolute top-24 left-6 sm:left-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em]" data-testid="hero-meta-left">
-        <div>N 40°42′46″ · W 74°00′21″</div>
-        <div className="mt-1">DESK · NEW YORK</div>
+      <div className="absolute top-24 left-6 sm:left-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] space-y-3" data-testid="hero-meta-left">
+        <div>
+          <div>N 40°42′25″ · W 74°00′41″</div>
+          <div className="mt-1 opacity-80">DESK · NEW YORK</div>
+        </div>
+        <div>
+          <div>N 51°30′56″ · W 00°05′53″</div>
+          <div className="mt-1 opacity-80">DESK · LONDON</div>
+        </div>
+        <div>
+          <div>N 35°40′52″ · E 139°46′43″</div>
+          <div className="mt-1 opacity-80">DESK · TOKYO</div>
+        </div>
       </div>
       <div className="absolute top-24 right-6 sm:right-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] text-right" data-testid="hero-meta-right">
         <div>{timeStr}</div>
@@ -61,7 +71,7 @@ export default function Hero() {
           <div className="lg:col-span-8">
             <div className="font-mono-ui text-[11px] uppercase tracking-[0.32em] text-[#013aa9]/70 mb-6 flex items-center gap-3" data-testid="hero-eyebrow">
               <span className="inline-block w-6 h-px bg-[#013aa9]" />
-              Issue №001 — Market Intelligence, uncompromised
+              Market Intelligence · A Daily Ritual
             </div>
 
             <h1 className="font-display text-[52px] sm:text-[84px] lg:text-[128px] leading-[0.9] tracking-[-0.02em] text-[#013aa9]" data-testid="hero-headline">
@@ -122,16 +132,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Dashed chart signature underline */}
-        <motion.div style={{ y: y2 }} className="mt-16 sm:mt-24 relative">
-          <DashedChart className="w-full h-28 sm:h-40" />
-          <div className="absolute inset-0 flex items-end justify-between px-2 font-mono-ui text-[10px] tracking-[0.2em] text-[#013aa9]/60">
-            <span>00:00</span>
-            <span>06:00</span>
-            <span>12:00</span>
-            <span>18:00</span>
-            <span>24:00</span>
-          </div>
+        {/* Elliott Wave + Fibonacci signature */}
+        <motion.div style={{ y: y2 }} className="mt-16 sm:mt-24 relative" data-testid="hero-elliott-wave">
+          <ElliottWaveFib className="w-full h-40 sm:h-56" />
         </motion.div>
 
         {/* Scroll cue */}

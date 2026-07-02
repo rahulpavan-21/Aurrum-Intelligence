@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MagneticButton from "./MagneticButton";
 
+const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/u7r7no9f_Final%20%282%29.png";
+
 const links = [
   { label: "Intelligence", href: "#about" },
   { label: "Capabilities", href: "#services" },
@@ -42,16 +44,20 @@ export default function Navbar() {
           href="#top"
           onClick={(e) => jump(e, "#top")}
           data-testid="nav-logo"
-          className="flex items-center gap-3 text-[#013aa9]"
+          aria-label="Aurrum Intelligence — home"
+          className="flex items-center shrink-0"
         >
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden>
-            <path d="M2 20 L8 8 L13 16 L18 6 L24 22" stroke="#013aa9" strokeWidth="1.6" strokeDasharray="3 3" fill="none" />
-            <circle cx="13" cy="13" r="12" stroke="#013aa9" strokeWidth="1" fill="none" strokeDasharray="2 3" />
-          </svg>
-          <span className="font-display text-xl sm:text-2xl leading-none tracking-tight">
-            Aurrum
-            <span className="font-sans-ui text-[10px] uppercase tracking-[0.28em] ml-2 font-semibold align-middle">Intelligence</span>
-          </span>
+          <div
+            role="img"
+            aria-hidden
+            className="h-12 sm:h-14 w-44 sm:w-56"
+            style={{
+              backgroundImage: `url("${LOGO}")`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "auto 260%",
+              backgroundPosition: "50% 48%",
+            }}
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
