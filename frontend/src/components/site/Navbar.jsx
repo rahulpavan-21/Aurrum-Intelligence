@@ -39,23 +39,23 @@ export default function Navbar() {
           : "bg-transparent")
       }
     >
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between">
+      <div className="w-full h-16 sm:h-20 flex items-stretch justify-between pr-4 sm:pr-8">
         <a
           href="#top"
           onClick={(e) => jump(e, "#top")}
           data-testid="nav-logo"
           aria-label="Aurrum Intelligence — home"
-          className="flex items-center shrink-0"
+          className="flex items-stretch shrink-0"
         >
           <div
             role="img"
             aria-hidden
-            className="h-12 sm:h-14 w-44 sm:w-56"
+            className="h-full w-64 sm:w-80"
             style={{
               backgroundImage: `url("${LOGO}")`,
               backgroundRepeat: "no-repeat",
-              backgroundSize: "auto 260%",
-              backgroundPosition: "50% 48%",
+              backgroundSize: "auto 320%",
+              backgroundPosition: "0% 48%",
             }}
           />
         </a>

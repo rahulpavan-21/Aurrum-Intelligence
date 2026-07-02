@@ -1,0 +1,47 @@
+{
+  "summary": "Frontend-only verification of 4 visual bug fixes on Aurrum Intelligence landing page. All 4 bug fixes CONFIRMED working. Regression checks pass. No console errors.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Hero Elliott Wave", "issues": ["Fib percentage labels render at x=1006 in a 1090-wide viewBox with preserveAspectRatio='none'; they render in DOM but visually blend near the AURRUM watermark on the right. Consider increasing fill opacity or moving watermark. Not blocking."]}
+    ]
+  },
+  "bug_verification": {
+    "BUG1_navbar_logo_flush_left": {
+      "status": "PASS",
+      "evidence": "nav-logo boundingBox x=0, y=0, w=320, h=80. Screenshot shows AURRUM + INTELLIGENCE wordmark clearly legible at extreme left."
+    },
+    "BUG2_desks_side_by_side": {
+      "status": "PASS",
+      "evidence": "3 desk blocks at top=96 each, diff=0 (well under 5px). Texts: NEW YORK, LONDON, TOKYO all present and visible on single row."
+    },
+    "BUG3_elliott_labels_not_overlapping": {
+      "status": "PASS",
+      "evidence": "Peaks: (1) y=120 above dot@130, (3) y=35 above dot@45, (5) y=12 above dot@22, (B) y=55 above dot@65. Troughs: (2) y=183 below dot@165, (4) y=113 below dot@95, (A) y=118 below dot@100, (C) y=148 below dot@130. Screenshot confirms clean separation."
+    },
+    "BUG4_fib_percentages_at_end_of_line": {
+      "status": "PASS",
+      "evidence": "All 7 fib labels found in SVG DOM at x=1006: 0.0%, 23.6%, 38.2%, 50.0%, 61.8%, 78.6%, 100.0%. Bounding boxes non-empty (~45-54 wide). 61.8% has bolder fontWeight/opacity as designed."
+    },
+    "REGRESSION": {
+      "hero_headline_visible": true,
+      "hero_eyebrow_text": "— MARKET INTELLIGENCE · A DAILY RITUAL",
+      "console_errors": [],
+      "note": "data-testid='aurrum-landing' wrapper existence not explicitly asserted but page loads and all hero testids render."
+    }
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "ElliottWaveFib.jsx: SVG uses preserveAspectRatio='none' with viewBox 1090x240 — stretching may distort labels on very wide screens; consider 'xMidYMid meet' if aesthetic distortion becomes an issue.",
+    "Hero watermark logo overlaps with the Fib percentage label region at the right; visually acceptable but reduces label contrast."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Iteration 2 confirmed all 4 visual regressions fixed. Navbar logo flush-left OK, 3 desks in single row OK, Elliott Wave labels positioned above/below correctly, Fib % labels rendered at x=1006. Wave animation has ~5s delay — always wait >=6s after scrolling into view before asserting on Fib text elements."
+}

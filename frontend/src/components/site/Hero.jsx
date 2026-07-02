@@ -44,7 +44,7 @@ export default function Hero() {
       <ParticleNetwork density={38} />
 
       {/* Corner meta */}
-      <div className="absolute top-24 left-6 sm:left-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] space-y-3" data-testid="hero-meta-left">
+      <div className="absolute top-24 left-6 sm:left-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] flex flex-wrap gap-x-8 gap-y-3" data-testid="hero-meta-left">
         <div>
           <div>N 40°42′25″ · W 74°00′41″</div>
           <div className="mt-1 opacity-80">DESK · NEW YORK</div>
