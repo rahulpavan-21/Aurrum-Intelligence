@@ -1,175 +1,163 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import { motion } from "framer-motion";
-import { RevealText } from "./AnimatedText";
 import MagneticButton from "./MagneticButton";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const SUPPORT_EMAIL = "support@aurrumintelligence.com";
 
-const STYLES = ["Discretionary", "Systematic / Quant", "Swing", "Position", "Options", "Other"];
+const disclosures = [
+  {
+    k: "No investment advice",
+    v: "Aurrum Intelligence is a market-research and educational publisher. Nothing on this site, in the daily briefing, in the mentorship, or in any Aurrum communication constitutes personal investment advice, a recommendation, a solicitation, or an offer to buy or sell any financial instrument.",
+  },
+  {
+    k: "High-risk instruments",
+    v: "Trading leveraged products — CFDs, futures, forex, options, and crypto derivatives — carries a high level of risk and may not be suitable for every investor. Leverage magnifies both gains and losses. You may lose more than your initial deposit. Only trade with capital you can afford to lose in full.",
+  },
+  {
+    k: "Past performance",
+    v: "Past performance, hypothetical results, back-tests, published trade ideas and mentorship P&L are not indicative of, and do not guarantee, future results. Market conditions change; strategies that worked historically may fail entirely in different regimes.",
+  },
+  {
+    k: "Your responsibility",
+    v: "You are solely responsible for your trading decisions, position sizing, and risk management. Before acting on any information from Aurrum, consult an independent, licensed financial advisor and consider your objectives, financial situation, and risk tolerance.",
+  },
+  {
+    k: "Prop firm & funded accounts",
+    v: "Prop-firm mentorship outcomes vary widely by individual, firm rules, market conditions, and execution discipline. Aurrum makes no guarantee of a funded account, a payout, or the retention of any funded account. Firm-specific rules always supersede any general guidance we publish.",
+  },
+  {
+    k: "No fiduciary relationship",
+    v: "Subscribing to Aurrum Intelligence, joining the mentorship, or corresponding with the desk does not create a fiduciary, advisory, brokerage, or client relationship between you and Aurrum.",
+  },
+  {
+    k: "Regulatory",
+    v: "Aurrum Intelligence is not registered as an investment adviser, broker-dealer, or commodity trading adviser with any regulator, including the SEC, FCA, CFTC, NFA, SEBI, or any equivalent authority. Nothing on this site should be construed as a regulated financial service.",
+  },
+  {
+    k: "Content & IP",
+    v: "All briefings, research notes, charts, mentorship material, and site content are the intellectual property of Aurrum Intelligence. Redistribution, republication, or resale in any form is prohibited without written consent.",
+  },
+];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", trading_style: "", message: "" });
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
-  const [error, setError] = useState("");
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("loading");
-    setError("");
-    try {
-      await axios.post(`${API}/contact`, form);
-      setStatus("success");
-      setForm({ name: "", email: "", trading_style: "", message: "" });
-    } catch (err) {
-      setStatus("error");
-      const detail = err?.response?.data?.detail;
-      setError(typeof detail === "string" ? detail : "Something went wrong. Try again.");
-    }
-  };
-
   return (
-    <section id="contact" data-testid="contact-section" className="section-invert relative py-28 sm:py-40 overflow-hidden">
+    <section id="contact" data-testid="contact-section" className="section-invert relative py-20 sm:py-28 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-          <div className="lg:col-span-6">
-            <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70 mb-4">§07 — Reach the desk</div>
-            <RevealText
-              text="Have a question? The analyst desk answers."
-              as="h2"
-              className="font-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-[-0.02em] text-[#f7f3e8] max-w-2xl"
-              testId="contact-headline"
-            />
-            <p className="mt-8 font-sans-ui text-base sm:text-lg text-[#f7f3e8]/85 max-w-xl" data-testid="contact-lede">
-              Ask about a briefing, request a sector primer, or tell us what you&apos;d like to see on your desk tomorrow morning.
-              Every message is read by an analyst — no bots, no funnels.
-            </p>
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left column — reach + brand */}
+          <div className="lg:col-span-5">
+            <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70 mb-6" data-testid="contact-eyebrow">
+              Reach the desk
+            </div>
 
-            <div className="mt-14 space-y-6 border-t border-dashed border-[#f7f3e8]/30 pt-8 max-w-md">
+            <motion.h2
+              data-testid="contact-headline"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-[-0.02em] text-[#f7f3e8]"
+            >
+              Talk to the desk.
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.9, delay: 0.15 }}
+              className="mt-8 font-sans-ui text-base sm:text-lg text-[#f7f3e8]/85 max-w-md"
+              data-testid="contact-lede"
+            >
+              Every message is read by an analyst — no bots, no funnels.
+              Ask about a briefing, request a sector primer, or tell us what
+              you&rsquo;d like to see on your desk tomorrow morning.
+            </motion.p>
+
+            <div className="mt-10 border-t border-dashed border-[#f7f3e8]/30 pt-8 space-y-6 max-w-md">
               <div>
-                <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70">Desk · Direct</div>
-                <a href="mailto:desk@aurrum.co" className="font-display text-2xl underline underline-offset-4">desk@aurrum.co</a>
+                <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70">
+                  Desk · Direct
+                </div>
+                <a
+                  href={`mailto:${SUPPORT_EMAIL}`}
+                  className="font-display text-2xl sm:text-3xl underline underline-offset-4 break-all"
+                  data-testid="contact-email-link"
+                >
+                  {SUPPORT_EMAIL}
+                </a>
               </div>
+
               <div>
-                <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70">Hours</div>
-                <div className="font-sans-ui text-base">Mon–Fri · 05:30 – 17:00 ET</div>
+                <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70">
+                  Hours
+                </div>
+                <div className="font-sans-ui text-base">
+                  Mon &ndash; Fri &middot; 05:30 &ndash; 17:00 ET
+                </div>
               </div>
-              <div>
-                <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70">Location</div>
-                <div className="font-sans-ui text-base">200 Water St, Floor 12 · New York, NY</div>
-              </div>
+
+              <MagneticButton
+                as="a"
+                href={`mailto:${SUPPORT_EMAIL}?subject=Aurrum%20Intelligence%20-%20Inquiry`}
+                className="btn-ink"
+                style={{ background: "#f7f3e8", color: "#013aa9", borderColor: "#f7f3e8" }}
+                testId="contact-email-cta"
+              >
+                Email the desk
+                <span aria-hidden>→</span>
+              </MagneticButton>
             </div>
           </div>
 
-          <motion.form
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10% 0px" }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            onSubmit={onSubmit}
-            data-testid="contact-form"
-            className="lg:col-span-6 border border-[#f7f3e8]/30 p-8 sm:p-10 bg-[#012c82]/40 backdrop-blur-sm"
-          >
-            <Field label="Full name" required>
-              <input
-                data-testid="contact-input-name"
-                required
-                type="text"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full bg-transparent border-b border-[#f7f3e8]/40 focus:border-[#f7f3e8] py-3 font-sans-ui text-base text-[#f7f3e8] placeholder-[#f7f3e8]/50 outline-none transition-colors"
-                placeholder="Ada Lovelace"
-              />
-            </Field>
-
-            <Field label="Email" required>
-              <input
-                data-testid="contact-input-email"
-                required
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full bg-transparent border-b border-[#f7f3e8]/40 focus:border-[#f7f3e8] py-3 font-sans-ui text-base text-[#f7f3e8] placeholder-[#f7f3e8]/50 outline-none transition-colors"
-                placeholder="ada@analog.eng"
-              />
-            </Field>
-
-            <Field label="Trading style">
-              <div className="flex flex-wrap gap-2 pt-2" data-testid="contact-style-group">
-                {STYLES.map((s) => (
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={() => setForm({ ...form, trading_style: s })}
-                    data-testid={`contact-style-${s.toLowerCase().replace(/[^a-z]/g, "-")}`}
-                    className={
-                      "px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] font-sans-ui border transition-colors " +
-                      (form.trading_style === s
-                        ? "bg-[#f7f3e8] text-[#013aa9] border-[#f7f3e8]"
-                        : "border-[#f7f3e8]/40 hover:border-[#f7f3e8]")
-                    }
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </Field>
-
-            <Field label="Message" required>
-              <textarea
-                data-testid="contact-input-message"
-                required
-                rows={5}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full bg-transparent border-b border-[#f7f3e8]/40 focus:border-[#f7f3e8] py-3 font-sans-ui text-base text-[#f7f3e8] placeholder-[#f7f3e8]/50 outline-none resize-none transition-colors"
-                placeholder="What's on your desk this week?"
-              />
-            </Field>
-
-            <div className="mt-8 flex flex-wrap items-center gap-6">
-              <MagneticButton
-                as="button"
-                type="submit"
-                className="btn-ink"
-                style={{ background: "#f7f3e8", color: "#013aa9", borderColor: "#f7f3e8" }}
-                testId="contact-submit"
-              >
-                {status === "loading" ? "Sending…" : "Send to the desk"}
-                <span aria-hidden>→</span>
-              </MagneticButton>
-
-              {status === "success" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="font-mono-ui text-xs uppercase tracking-[0.28em] text-[#7ce0a2]"
-                  data-testid="contact-success"
-                >
-                  ✓ Received. Analyst will reply within 24h.
-                </motion.div>
-              )}
-              {status === "error" && (
-                <div className="font-mono-ui text-xs uppercase tracking-[0.28em] text-[#ff9c9c]" data-testid="contact-error">
-                  {error}
-                </div>
-              )}
+          {/* Right column — risk disclosure */}
+          <div className="lg:col-span-7 lg:pl-10 lg:border-l lg:border-dashed lg:border-[#f7f3e8]/30" data-testid="risk-disclosure">
+            <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70 mb-6">
+              Legal · Risk Disclosure
             </div>
-          </motion.form>
+            <motion.h3
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.9 }}
+              className="font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.1] tracking-[-0.01em] text-[#f7f3e8] mb-8"
+              data-testid="risk-headline"
+            >
+              Read this before you trade a single tick.
+            </motion.h3>
+
+            <dl className="space-y-6">
+              {disclosures.map((d, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.05 }}
+                  transition={{ duration: 0.7, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                  className="grid sm:grid-cols-12 gap-2 sm:gap-6 pb-5 border-b border-dashed border-[#f7f3e8]/20"
+                  data-testid={`risk-item-${i}`}
+                >
+                  <dt className="sm:col-span-4">
+                    <div className="font-mono-ui text-[10px] uppercase tracking-[0.28em] text-[#f7f3e8]/70">
+                      0{i + 1}
+                    </div>
+                    <div className="font-display text-lg text-[#f7f3e8] mt-1">
+                      {d.k}
+                    </div>
+                  </dt>
+                  <dd className="sm:col-span-8 font-sans-ui text-sm sm:text-[15px] leading-relaxed text-[#f7f3e8]/85">
+                    {d.v}
+                  </dd>
+                </motion.div>
+              ))}
+            </dl>
+
+            <div className="mt-10 font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/60">
+              By using this site or any Aurrum product, you acknowledge that you have read, understood, and accepted this disclosure in full.
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Field({ label, children, required }) {
-  return (
-    <label className="block mb-6">
-      <span className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70">
-        {label}{required && <span className="text-[#f7f3e8]"> *</span>}
-      </span>
-      {children}
-    </label>
   );
 }

@@ -39,7 +39,6 @@ export default function Footer() {
               { l: "Process", h: "#how" },
               { l: "Sample Briefing", h: "#sample" },
               { l: "Pricing", h: "#pricing" },
-              { l: "The Desk", h: "#team" },
               { l: "Contact", h: "#contact" },
             ].map((x) => (
               <li key={x.h}>
