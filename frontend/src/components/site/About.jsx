@@ -53,10 +53,10 @@ export default function About() {
 
             <RevealBlock delay={0.2}>
               <p className="mt-10 font-sans-ui text-lg sm:text-xl leading-relaxed text-[#013aa9]/85 max-w-3xl" data-testid="about-lede">
-                Aurrum Intelligence distills the same institutional research that moves hedge fund
-                desks into a single, disciplined morning brief. Positioning shifts, macro pivots,
-                sector rotations, cross-asset dislocations — pre-market, in your inbox, at a price
-                built for the independent trader.
+                Aurrum Intelligence is built from an experience that only a handful of strategies
+                actually work in the market — and most of us are chasing the wrong ones. We want
+                to be every successful trader&rsquo;s morning brief: top-terminal-level analysis,
+                delivered at a price built for the independent trader.
               </p>
             </RevealBlock>
           </div>
