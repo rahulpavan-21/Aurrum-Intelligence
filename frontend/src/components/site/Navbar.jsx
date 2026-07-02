@@ -46,16 +46,13 @@ export default function Navbar() {
           aria-label="Aurrum Intelligence — home"
           className="flex items-stretch shrink-0"
         >
-          <div
-            role="img"
-            aria-hidden
-            className="h-16 sm:h-20 w-52 sm:w-64 shrink-0 bg-black"
-            style={{
-              backgroundImage: `url("${LOGO}")`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center center",
-              backgroundSize: "auto 200%",
-            }}
+          <img
+            src={LOGO}
+            alt="Aurrum Intelligence"
+            data-testid="nav-logo-img"
+            className="h-16 sm:h-20 w-52 sm:w-64 object-cover object-center block"
+            loading="eager"
+            decoding="sync"
           />
         </a>
 

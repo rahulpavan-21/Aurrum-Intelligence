@@ -8,17 +8,12 @@ export default function Footer() {
     <footer data-testid="site-footer" className="relative bg-[#f7f3e8] border-t border-dashed border-[#013aa9]/40">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 py-16 grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-7">
-          <div
-            role="img"
-            aria-label="Aurrum Intelligence"
+          <img
+            src={LOGO}
+            alt="Aurrum Intelligence"
             data-testid="footer-logo"
-            className="w-64 h-64 bg-black mb-6"
-            style={{
-              backgroundImage: `url("${LOGO}")`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center 45%",
-              backgroundSize: "160% auto",
-            }}
+            className="w-32 h-32 sm:w-36 sm:h-36 object-cover object-center block mb-6"
+            loading="lazy"
           />
           <p className="font-sans-ui text-sm text-[#013aa9]/75 max-w-md">
             Aurrum Intelligence &middot; Market intelligence platform for the independent trader.

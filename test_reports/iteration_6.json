@@ -1,0 +1,63 @@
+{
+  "summary": "Verified nav & footer logo bug-fix on Aurrum Intelligence landing. Both images now load correctly (naturalWidth > 0, complete=true, visibility=visible, opacity=1) and no failed image requests. Navbar logo renders correctly and the AURRUM INTELLIGENCE wordmark is clearly legible in the top-left. Footer logo LOADS but is severely CROPPED because a 5:1 wide banner PNG (800x160) is forced into a 144x144 square with `object-cover`, so the tagline 'READ THE MARKET. TRADE THE EDGE.' is NOT legible — fails the visual verification requirement of BUG FIX 2.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "Footer.jsx (footer-logo)",
+        "issue": "Footer logo image (natural 800x160, ~5:1 aspect) is placed in a square 144x144 container with `object-cover object-center`, which crops away most of the wordmark and the entire 'READ THE MARKET. TRADE THE EDGE.' tagline. Only partial letters 'RRU / ELLIGEN' are visible. Fails the requirement that the lockup + tagline be legible.",
+        "selector": "[data-testid='footer-logo']",
+        "priority": "HIGH"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Footer",
+        "issues": [
+          "Logo container should be a rectangle matching the image aspect ratio (e.g. w-44 h-9 / w-52 h-11) OR the class should switch from `object-cover` to `object-contain` so the whole lockup is visible.",
+          "Optional: user described the mark as 'inside a black block', but the PNGs have transparent/light backgrounds — the mark renders on the cream page background, not on a black block. If a black block backing was intended, wrap the <img> in a black div."
+        ]
+      }
+    ]
+  },
+  "verification_details": {
+    "nav_logo": {
+      "src": "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/yft9b2jx_Final%20%284%29.png",
+      "complete": true,
+      "naturalWidth": 1200,
+      "naturalHeight": 480,
+      "rect": {"top": 0, "left": 0, "width": 256, "height": 80},
+      "visibility": "visible",
+      "opacity": "1",
+      "spec_pass": "PASS — element exists, image loaded (naturalWidth>0), top<30, left<20, width>=200, height>=60, wordmark visually legible in screenshot"
+    },
+    "footer_logo": {
+      "src": "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/d3aqalox_Final%20%283%29.png",
+      "complete": true,
+      "naturalWidth": 800,
+      "naturalHeight": 160,
+      "rect_wh": {"width": 144, "height": 144},
+      "visibility": "visible",
+      "opacity": "1",
+      "spec_pass": "PARTIAL — image loaded and size 144x144 is within the requested 120-160 range, BUT the visual-legibility requirement fails because object-cover crops a 5:1 image into a 1:1 box and the tagline is not visible."
+    },
+    "network": "No failed requests. Both logo URLs returned successfully.",
+    "console_errors": "None observed."
+  },
+  "test_report_links": ["/app/tests/logo_check.js"],
+  "action_items": [
+    "In /app/frontend/src/components/site/Footer.jsx line 15, either (a) change `object-cover` to `object-contain` and widen the container to match aspect (e.g. `w-40 sm:w-48 h-auto`), or (b) keep it small but use a square version of the lockup asset. Verify tagline 'READ THE MARKET. TRADE THE EDGE.' is legible.",
+    "Optional: if a black block backdrop is desired (per user's description), wrap the <img> in a `bg-black p-3` container."
+  ],
+  "critical_code_review_comments": [
+    "Footer.jsx uses `object-cover` on a non-square image forced into a square — this pattern will always crop; use `object-contain` when preserving the full mark is required.",
+    "Navbar logo also uses `object-cover object-center` on `h-16 sm:h-20 w-52 sm:w-64` — the aspect (256:80 = 3.2:1) is close to the image aspect (1200:480 = 2.5:1) so cropping is mild and the wordmark is still legible, but object-contain would be safer."
+  ],
+  "updated_files": ["/app/tests/logo_check.js (new helper)"],
+  "success_rate": {"backend": "N/A", "frontend": "66% (nav pass, footer size-pass but visual-fail, regression pass)"},
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "The bug is purely CSS on Footer.jsx line 15: object-cover on a square container crops the wide lockup. Fix by switching to object-contain and/or a rectangular container. Nav logo is fine. No backend testing needed."
+}
