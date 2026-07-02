@@ -51,20 +51,21 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
         style={{ y: y1 }}
         data-testid="hero-vertical-wordmark"
-        className="hidden md:block absolute top-1/2 left-0 sm:left-2 z-[1] pointer-events-none select-none"
+        className="hidden md:block absolute left-0 sm:left-2 z-[1] pointer-events-none select-none"
       >
         <div
           className="font-display leading-none tracking-[0.02em] text-[#013aa9]/85"
           style={{
-            transform: "translateY(-50%) rotate(-90deg)",
+            position: "absolute",
+            top: "58vh",
+            left: "clamp(20px, 2vw, 40px)",
+            transform: "rotate(-90deg)",
             transformOrigin: "left center",
             whiteSpace: "nowrap",
-            fontSize: "clamp(28px, 3.6vw, 60px)",
+            fontSize: "clamp(22px, 2.6vw, 40px)",
             fontWeight: 800,
             fontStyle: "italic",
             letterSpacing: "0.04em",
-            marginLeft: "clamp(28px, 3.6vw, 60px)",
-            // 3D extruded stack (bottom → top-most)
             textShadow: [
               "1px 1px 0 rgba(1,58,169,0.85)",
               "2px 2px 0 rgba(1,58,169,0.7)",
