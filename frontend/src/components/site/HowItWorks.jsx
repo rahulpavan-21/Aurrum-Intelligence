@@ -18,7 +18,7 @@ const steps = [
     n: "03",
     title: "Execution.",
     desc: "Execute one of the most celebrated and accurate technical setups in the global trading space.",
-    stat: "Live",
+    stat: "All set in 9 min",
   },
 ];
 
@@ -78,9 +78,6 @@ export default function HowItWorks() {
                     <ProgressLabel mv={scrollYProgress} steps={steps} />
                   </div>
                 </motion.div>
-              </div>
-              <div className="absolute bottom-4 right-4 font-mono-ui text-[10px] uppercase tracking-[0.32em] opacity-70">
-                / 0{steps.length}
               </div>
             </div>
           </div>
