@@ -6,6 +6,7 @@ const quotes = [
   "Information asymmetry is the last durable edge. We close it — every morning, before the bell.",
   "Escape the analysis paralysis and cut those fake-guru noise.",
   "Retail drowns in information. Institutions act on interpretation. We hand you the interpretation.",
+  "No signals. No spoon-feeding. Bloomberg/Reuters-level technical analysis that builds a real trader.",
 ];
 
 export default function About() {
@@ -42,11 +43,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-[-0.02em] text-[#013aa9]"
+              className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-[-0.02em] text-[#013aa9]"
             >
-              Built by traders who&rsquo;ve sat on institutional desks
-              <span className="block italic font-medium mt-2">
-                — and beaten the prop firm game.
+              Built by traders who&rsquo;ve sat on institutional desks{" "}
+              <span className="italic font-medium">
+                &mdash; and beaten the prop firm game.
               </span>
             </motion.h2>
 
