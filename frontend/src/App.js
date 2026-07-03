@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "@/App.css";
 import Lenis from "lenis";
+import { Analytics } from "@vercel/analytics/react";
 import AurrumSite from "./pages/AurrumSite";
 import CursorOrb from "./components/site/CursorOrb";
 
@@ -24,6 +25,7 @@ function App() {
       <CursorOrb />
       <div className="grain" aria-hidden />
       <AurrumSite />
+      <Analytics />
     </div>
   );
 }
