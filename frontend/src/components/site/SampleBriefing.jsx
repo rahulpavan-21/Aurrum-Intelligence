@@ -4,7 +4,7 @@ import DashedChart from "./DashedChart";
 import MagneticButton from "./MagneticButton";
 
 // TODO: replace with your real WhatsApp number (E.164 with country code, no + no spaces)
-const WHATSAPP_URL = "https://wa.me/919999999999?text=" + encodeURIComponent(
+const WHATSAPP_URL = "https://wa.me/916301971390?text=" + encodeURIComponent(
   "Hi Aurrum, I'd like a free preview of the daily briefing."
 );
 
@@ -35,7 +35,7 @@ export default function SampleBriefing() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="font-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-[-0.02em] text-[#013aa9]"
             >
-              What will you actually read.
+              What you'll actually read.
             </motion.h2>
 
             <motion.p
@@ -46,7 +46,7 @@ export default function SampleBriefing() {
               className="mt-8 font-sans-ui text-base sm:text-lg text-[#013aa9]/85 max-w-md"
               data-testid="sample-lede"
             >
-              This is a redacted excerpt from our Intelligent model. This can be best applied to
+              A redacted excerpt from our intelligent model — best applied to:
             </motion.p>
 
             <ul className="mt-8 space-y-3" data-testid="sample-applicable-list">
