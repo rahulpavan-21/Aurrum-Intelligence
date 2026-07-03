@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
+import MagneticButton from "./MagneticButton";
 
+const WHATSAPP_URL = "https://wa.me/916301971390?text=" + encodeURIComponent("Hi Aurrum, I'd like to subscribe. Please share the details.");
 const plans = [
   {
     id: "tool",
@@ -123,8 +125,9 @@ function PricingCard({ plan, index }) {
         <div className="flex flex-wrap items-center gap-3">
           <MagneticButton
             as="a"
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-ink"
             style={{ background: "#f7f3e8", color: "#013aa9", borderColor: "#f7f3e8" }}
             testId={`${plan.id}-cta`}
