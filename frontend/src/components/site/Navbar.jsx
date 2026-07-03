@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MagneticButton from "./MagneticButton";
 
 const LOGO = "/logo.png";
-
+const WHATSAPP_URL = "https://wa.me/916301971390?text=" + encodeURIComponent("Hi Aurrum, I'd like to get the daily briefing.");
 const links = [
   { label: "Intelligence", href: "#about" },
   { label: "Process", href: "#how" },
@@ -73,9 +73,10 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <MagneticButton
             as="a"
-            href="#contact"
-            onClick={(e) => jump(e, "#contact")}
-            className="btn-ink hidden md:inline-flex"
+                href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ink hidden sm:inline-flex"
             testId="nav-cta"
           >
             Get Briefing
@@ -108,8 +109,10 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
-              onClick={(e) => jump(e, "#contact")}
+             href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
               className="btn-ink justify-center"
               data-testid="nav-mobile-cta"
             >
