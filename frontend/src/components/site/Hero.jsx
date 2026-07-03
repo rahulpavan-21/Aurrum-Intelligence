@@ -69,10 +69,7 @@ export default function Hero() {
       <motion.div style={{ y: y1, opacity }} className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 pt-16 sm:pt-24">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-8">
-            <div className="font-mono-ui text-[11px] uppercase tracking-[0.32em] text-[#013aa9]/70 mb-6 flex items-center gap-3" data-testid="hero-eyebrow">
-              <span className="inline-block w-6 h-px bg-[#013aa9]" />
-              Market Intelligence · A Daily Ritual
-            </div>
+    
 
             <h1 className="font-display text-[52px] sm:text-[84px] lg:text-[128px] leading-[0.9] tracking-[-0.02em] text-[#013aa9]" data-testid="hero-headline">
               <div>
