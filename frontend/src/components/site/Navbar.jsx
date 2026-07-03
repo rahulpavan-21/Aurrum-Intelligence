@@ -75,7 +75,7 @@ export default function Navbar() {
             as="a"
             href="#contact"
             onClick={(e) => jump(e, "#contact")}
-            className="btn-ink hidden sm:inline-flex"
+            className="btn-ink hidden md:inline-flex"
             testId="nav-cta"
           >
             Get Briefing
