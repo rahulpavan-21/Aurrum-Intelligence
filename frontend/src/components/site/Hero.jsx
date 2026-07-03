@@ -43,8 +43,8 @@ export default function Hero() {
     >
       <ParticleNetwork density={38} />
 
-      {/* Corner meta — full-width bar with 3 desks + live clock spread across */}
-      <div className="absolute top-24 left-6 sm:left-10 right-6 sm:right-10 z-10 font-mono-ui text-[10px] sm:text-xs text-[#013aa9]/70 tracking-[0.2em] hidden md:flex items-start justify-between gap-6" data-testid="hero-meta-left">
+      {/* Corner meta — 2x2 grid in normal flow on mobile (no overlap), absolute bar on desktop */}
+      <div className="relative md:absolute md:top-24 md:left-10 md:right-10 z-10 px-6 sm:px-10 md:px-0 pt-4 md:pt-0 font-mono-ui text-[9px] sm:text-xs text-[#013aa9]/70 tracking-[0.15em] sm:tracking-[0.2em] grid grid-cols-2 md:flex md:items-start md:justify-between gap-x-4 gap-y-3 md:gap-6" data-testid="hero-meta-left">
         <div>
           <div>N 40°42′25″ · W 74°00′41″</div>
           <div className="mt-1 opacity-80">DESK · NEW YORK</div>
@@ -57,23 +57,18 @@ export default function Hero() {
           <div>N 35°40′52″ · E 139°46′43″</div>
           <div className="mt-1 opacity-80">DESK · TOKYO</div>
         </div>
-        <div className="text-right" data-testid="hero-meta-right">
+        <div className="md:text-right" data-testid="hero-meta-right">
           <div>{timeStr}</div>
-          <div className="mt-1 flex items-center gap-2 justify-end">
+          <div className="mt-1 flex items-center gap-2 md:justify-end">
             <span className="w-1.5 h-1.5 rounded-full bg-[#013aa9] blink" />
             MARKETS · LIVE
           </div>
         </div>
       </div>
 
-      <motion.div style={{ y: y1, opacity }} className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 pt-16 sm:pt-24">
+      <motion.div style={{ y: y1, opacity }} className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 pt-8 sm:pt-24">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-8">
-    <div className="font-mono-ui text-[11px] uppercase tracking-[0.32em] text-[#013aa9]/70 mb-6 flex items-center gap-3" data-testid="hero-eyebrow">
-              <span className="inline-block w-6 h-px bg-[#013aa9]" />
-              Market Intelligence · A Daily Ritual
-            </div>
-
             <h1 className="font-display text-[52px] sm:text-[84px] lg:text-[128px] leading-[0.9] tracking-[-0.02em] text-[#013aa9]" data-testid="hero-headline">
               <div>
                 <SpanReveal delay={0.05}>Read</SpanReveal>{" "}
@@ -184,7 +179,7 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Floating logo watermark — pushed further off-screen so it never interferes with the Fib labels on the right */}
+      {/* Floating logo watermark */}
       <motion.img
         initial={{ opacity: 0, rotate: -5 }}
         animate={{ opacity: 0.04, rotate: 0 }}
