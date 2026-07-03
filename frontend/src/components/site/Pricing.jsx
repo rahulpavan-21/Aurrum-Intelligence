@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
-import MagneticButton from "./MagneticButton";
 
 const WHATSAPP_URL = "https://wa.me/916301971390?text=" + encodeURIComponent("Hi Aurrum, I'd like to subscribe. Please share the details.");
 const plans = [
