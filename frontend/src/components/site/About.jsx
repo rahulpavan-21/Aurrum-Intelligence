@@ -10,7 +10,7 @@ const quotes = [
   ),
   (
     <>
-      Escape the <strong>analysis paralysis</strong> and cut those fake-guru noise.
+      Escape the <strong>analysis paralysis</strong> and cut the fake-guru noise.
     </>
   ),
   (
@@ -69,8 +69,7 @@ export default function About() {
 
             <RevealBlock delay={0.2}>
               <p className="mt-10 font-sans-ui text-lg sm:text-xl leading-relaxed text-[#013aa9]/85 max-w-3xl" data-testid="about-lede">
-                Aurrum Intelligence is built from an experience that only a handful of strategies
-                actually work in the market — and most of us are chasing the wrong ones. We want
+                Aurrum Intelligence is built on a hard-won truth: only a handful of strategies actually work in the markets — and most traders are chasing the wrong ones. We want
                 to be every successful trader&rsquo;s morning brief: top-terminal-level analysis,
                 delivered at a price built for the independent trader.
               </p>
