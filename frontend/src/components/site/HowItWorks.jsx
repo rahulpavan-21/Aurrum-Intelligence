@@ -5,13 +5,13 @@ const steps = [
   {
     n: "01",
     title: "Read before you trade.",
-    desc: "Get the same technical analysis from our Intelligent system which top-tier desks receive every morning.",
+    desc: "Get the same technical analysis top-tier desks receive every morning — from our intelligent system.",
     stat: "3 min",
   },
   {
     n: "02",
     title: "Analyse and mark.",
-    desc: "Understand the analysis, mark your levels and pre-plan your day setups.",
+    desc: "Understand the analysis, mark your levels and plan your setups for the day.",
     stat: "6 min",
   },
   {
@@ -56,8 +56,8 @@ export default function HowItWorks() {
           >
             <p>
               Markets are made by institutional trading activity — and you are seeing the exact
-              same levels they see. Which means you have an accurate trading setup, not a
-              speculation.
+              same levels they see. That means you have an accurate trading setup - not a
+              guess.
             </p>
             <p className="text-[#f7f3e8]/75">
               Trust us on this. The desks are not reading whatever is easily available to you.
