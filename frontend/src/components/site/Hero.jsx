@@ -110,7 +110,7 @@ export default function Hero() {
               {[
                 "serious trader who wants an institutional edge.",
                 "prop-firm trader who wants real payouts.",
-                "beginner who wants to start how a professional starts.",
+                "beginner who wants to start how a professional does.",
               ].map((t, i) => (
                 <motion.li
                   key={i}
