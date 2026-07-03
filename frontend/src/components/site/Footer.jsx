@@ -1,6 +1,6 @@
 import React from "react";
 
-const LOGO = "https://customer-assets.emergentagent.com/job_aurrum-quantum-ui/artifacts/d3aqalox_Final%20%283%29.png";
+const LOGO = "/logo.png";;
 const SUPPORT_EMAIL = "support@aurrumintelligence.com";
 
 export default function Footer() {
