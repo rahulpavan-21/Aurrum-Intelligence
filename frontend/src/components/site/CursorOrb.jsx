@@ -40,9 +40,9 @@ export default function CursorOrb() {
       const s = state.current;
       s.x += (s.tx - s.x) * 0.9;
       s.y += (s.ty - s.y) * 0.9;
-      s.rx += (s.tx - s.rx) * 0.18;
-      s.ry += (s.ty - s.ry) * 0.18;
-      s.scale += (s.tscale - s.scale) * 0.18;
+      s.rx += (s.tx - s.rx) * 0.4;
+      s.ry += (s.ty - s.ry) * 0.4;
+      s.scale += (s.tscale - s.scale) * 0.3;
 
       if (dot.current) {
         dot.current.style.transform = `translate3d(${s.x - 3}px, ${s.y - 3}px, 0)`;
