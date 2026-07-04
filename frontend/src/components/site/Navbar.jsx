@@ -63,7 +63,7 @@ export default function Navbar() {
               href={l.href}
               onClick={(e) => jump(e, l.href)}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
-              className="font-sans-ui text-[11px] uppercase tracking-[0.22em] text-[#013aa9]/80 hover:text-[#013aa9] transition-colors"
+              className="font-sans-ui font-semibold text-[12px] uppercase tracking-[0.22em] text-[#013aa9] hover:text-[#013aa9] transition-colors"
             >
               {l.label}
             </a>
@@ -103,7 +103,7 @@ export default function Navbar() {
                 href={l.href}
                 onClick={(e) => jump(e, l.href)}
                 data-testid={`nav-mobile-${l.label.toLowerCase()}`}
-                className="font-sans-ui text-sm uppercase tracking-[0.22em] text-[#013aa9]"
+               className="font-sans-ui font-semibold text-sm uppercase tracking-[0.22em] text-[#013aa9]"
               >
                 {l.label}
               </a>
