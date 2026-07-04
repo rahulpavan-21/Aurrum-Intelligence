@@ -6,7 +6,7 @@ const WHATSAPP_URL = "https://wa.me/916301971390?text=" + encodeURIComponent("Hi
 const plans = [
   {
     id: "tool",
-    tag: "Aurrum · Tool",
+    tag: "Aurrum Tool",
     title: "Aurrum Market Intelligence Tool",
     price: "29",
     unit: "/ month",
@@ -22,7 +22,7 @@ const plans = [
   },
   {
     id: "mentorship",
-    tag: "Aurrum · Mentorship",
+    tag: "Aurrum Mentorship",
     title: "Aurrum Mentorship",
     price: "91",
     unit: "/ one-time",
@@ -83,7 +83,7 @@ function PricingCard({ plan, index }) {
     >
       {/* Left half — number */}
       <div className={"lg:col-span-5 p-10 sm:p-12 relative overflow-hidden " + (dark ? "bg-[#f7f3e8]" : "bg-[#f7f3e8]")}>
-        <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#013aa9]/70 mb-6" data-testid={`${plan.id}-tag`}>
+       <div className="font-display text-3xl sm:text-4xl text-[#013aa9] mb-6" data-testid={`${plan.id}-tag`}>
           {plan.tag}
         </div>
         <div className="flex items-start gap-2" data-testid={`${plan.id}-price`}>
