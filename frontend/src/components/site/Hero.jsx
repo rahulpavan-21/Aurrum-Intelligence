@@ -68,8 +68,8 @@ export default function Hero() {
 
       <motion.div style={{ y: y1, opacity }} className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 pt-8 sm:pt-24">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
-          <div className="lg:col-span-7">
-            <h1 className="font-display text-[42px] sm:text-[62px] lg:text-[92px] leading-[0.95] tracking-[-0.02em] text-[#013aa9]" data-testid="hero-headline">
+          <div className="lg:col-span-6">
+            <h1 className="font-display text-[38px] sm:text-[54px] lg:text-[78px] leading-[0.95] tracking-[-0.02em] text-[#013aa9]" data-testid="hero-headline">
               <div>
                 <SpanReveal delay={0.05}>Read</SpanReveal>{" "}
                 <SpanReveal delay={0.15}>the</SpanReveal>
@@ -85,7 +85,7 @@ export default function Hero() {
             </h1>
           </div>
 
-         <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-dashed lg:border-[#013aa9]/40">
+         <div className="lg:col-span-6 lg:pl-8 lg:border-l lg:border-dashed lg:border-[#013aa9]/40">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
