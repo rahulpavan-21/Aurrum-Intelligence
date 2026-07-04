@@ -121,7 +121,7 @@ export default function Contact() {
                      className="w-11 h-11 grid place-items-center border border-[#f7f3e8]/40 text-[#f7f3e8] transition-colors hover:bg-[#f7f3e8] hover:text-[#013aa9]">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
                   </a>
-                  <a href="X_URL" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"
+                  <a href="https://x.com/aurrumintellige" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"
                      className="w-11 h-11 grid place-items-center border border-[#f7f3e8]/40 text-[#f7f3e8] transition-colors hover:bg-[#f7f3e8] hover:text-[#013aa9]">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h7l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
                   </a>
