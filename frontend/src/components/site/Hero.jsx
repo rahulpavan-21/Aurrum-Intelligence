@@ -68,8 +68,8 @@ export default function Hero() {
 
       <motion.div style={{ y: y1, opacity }} className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 pt-8 sm:pt-24">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
-          <div className="lg:col-span-8">
-            <h1 className="font-display text-[52px] sm:text-[84px] lg:text-[128px] leading-[0.9] tracking-[-0.02em] text-[#013aa9]" data-testid="hero-headline">
+          <div className="lg:col-span-7">
+            <h1 className="font-display text-[42px] sm:text-[62px] lg:text-[92px] leading-[0.95] tracking-[-0.02em] text-[#013aa9]" data-testid="hero-headline">
               <div>
                 <SpanReveal delay={0.05}>Read</SpanReveal>{" "}
                 <SpanReveal delay={0.15}>the</SpanReveal>
@@ -85,12 +85,12 @@ export default function Hero() {
             </h1>
           </div>
 
-          <div className="lg:col-span-4 lg:pl-8 lg:border-l lg:border-dashed lg:border-[#013aa9]/40">
+         <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-dashed lg:border-[#013aa9]/40">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 1 }}
-              className="font-display text-2xl sm:text-3xl leading-[1.1] tracking-[-0.01em] text-[#013aa9]"
+            className="font-display text-2xl sm:text-4xl leading-[1.1] tracking-[-0.01em] text-[#013aa9]"
               data-testid="hero-subhead"
             >
               Aurrum Intelligence makes your life better if you are{" "}
@@ -118,7 +118,7 @@ export default function Hero() {
                     hidden: { opacity: 0, y: 14 },
                     show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
                   }}
-                  className="flex items-start gap-3 font-sans-ui text-sm sm:text-base leading-snug text-[#013aa9]/90"
+                className="flex items-start gap-3 font-sans-ui text-base sm:text-lg leading-snug text-[#013aa9]/90"
                   data-testid={`hero-audience-${i}`}
                 >
                   <span className="mt-2 w-4 h-px bg-[#013aa9] shrink-0" />
