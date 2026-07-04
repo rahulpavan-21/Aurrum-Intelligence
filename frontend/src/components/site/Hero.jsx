@@ -44,10 +44,10 @@ export default function Hero() {
       <ParticleNetwork density={38} />
 
       {/* Corner meta — 2x2 grid in normal flow on mobile (no overlap), absolute bar on desktop */}
-      <div className="relative md:absolute md:top-24 md:left-10 md:right-10 z-10 px-6 sm:px-10 md:px-0 pt-4 md:pt-0 font-mono-ui text-[9px] sm:text-xs text-[#013aa9]/70 tracking-[0.15em] sm:tracking-[0.2em] grid grid-cols-2 md:flex md:items-start md:justify-between gap-x-4 gap-y-3 md:gap-6" data-testid="hero-meta-left">
+      <div className="relative md:absolute md:top-24 md:left-10 md:right-10 z-10 px-6 sm:px-10 md:px-0 pt-4 md:pt-0 font-mono-ui font-semibold text-[11px] sm:text-sm text-[#013aa9] tracking-[0.15em] sm:tracking-[0.2em] grid grid-cols-2 md:flex md:items-start md:justify-between gap-x-4 gap-y-3 md:gap-6" data-testid="hero-meta-left">
         <div>
           <div>N 40°42′25″ · W 74°00′41″</div>
-          <div className="mt-1 opacity-80">DESK · NEW YORK</div>
+          <div className="mt-1 opacity-100">DESK · NEW YORK</div>
         </div>
         <div>
           <div>N 51°30′56″ · W 00°05′53″</div>
