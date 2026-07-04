@@ -107,6 +107,26 @@ export default function Contact() {
                 Email the desk
                 <span aria-hidden>→</span>
               </MagneticButton>
+              {/* Socials */}
+              <div>
+                <div className="font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f3e8]/70 mb-3">
+                  Follow the desk
+                </div>
+                <div className="flex items-center gap-3">
+                  <a href="https://www.linkedin.com/company/133354670/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                     className="w-11 h-11 grid place-items-center border border-[#f7f3e8]/40 text-[#f7f3e8] transition-colors hover:bg-[#f7f3e8] hover:text-[#013aa9]">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6 2.5 2.5 0 005 8.5 2.5 2.5 0 007.5 6 2.5 2.5 0 005 3.5h-.02zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.8-2.05 3.7-2.05 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9V9z"/></svg>
+                  </a>
+                  <a href="https://www.instagram.com/aurrum_intelligence/L" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                     className="w-11 h-11 grid place-items-center border border-[#f7f3e8]/40 text-[#f7f3e8] transition-colors hover:bg-[#f7f3e8] hover:text-[#013aa9]">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+                  </a>
+                  <a href="X_URL" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"
+                     className="w-11 h-11 grid place-items-center border border-[#f7f3e8]/40 text-[#f7f3e8] transition-colors hover:bg-[#f7f3e8] hover:text-[#013aa9]">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h7l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
